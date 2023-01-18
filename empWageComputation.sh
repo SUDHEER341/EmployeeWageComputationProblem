@@ -1,8 +1,13 @@
-echo "welcome to employee wage computation problem"
 
+echo "welcome to Employee wage computation program"
 isPartTime=1;
 isFullTime=2;
+totalSalary=0;
 empRatePerHr=20;
+numWorkingDays=20;
+
+for (( day=1; day<=numWorkingDays; day++ ))
+do 
 randomCheck=$((RANDOM%3));
 
 case $randomCheck in $isFullTime)
@@ -15,4 +20,6 @@ case $randomCheck in $isFullTime)
  esac
 
 salary=$(($empHrs*$empRatePerHr));
-echo "salary=$salary"
+totalSalary=$(($totalSalary+$salary))
+done
+echo "Employee has earned $totalSalary$ in a month";
