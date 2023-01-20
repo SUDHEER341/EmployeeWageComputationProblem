@@ -1,4 +1,3 @@
-
 echo "welcome to Employee wage computation program"
 isPartTime=1;
 isFullTime=2;
@@ -16,11 +15,11 @@ function calculateWorkingHour() {
        empHrs=4;;
        *)
         empHrs=0;;
-esac 
+esac
 echo $empHrs;
 }
 while [[ $day -le 20 && $totalWorkingHour -lt 100 ]]
-do 
+do
 randomCheck=$((RANDOM%3));
 
     wHour=$(calculateWorkingHour $randomCheck);
@@ -36,6 +35,4 @@ salary=$(($empRatePerHr*$wHour));
 totalSalary=$(($totalSalary+$salary))
 ((day++))
 done
-echo  "Daily wise salary: " ${salary[@]}
-echo "Employee Total salary salary: " ${totalSalary[@]}
 echo "Employee has earned $totalSalary$ in a month (Total working Hour :$totalWorkingHour)";
